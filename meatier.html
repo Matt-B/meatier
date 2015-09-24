@@ -8,11 +8,15 @@
       <h1>Meatier!</h1>
     </header>
     <div class="form-group">
-      <form class="new-recipe">
-        <label for="recipeInput">Insert a new recipe!</label>
-        <input type="text" name="text" id="recipeInput" placeholder="Meatier!" />
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      {{> loginButtons}}
+      
+      {{#if currentUser}}
+        <form class="new-recipe">
+          <label for="recipeInput">Insert a new recipe!</label>
+          <input type="text" name="text" id="recipeInput" placeholder="Meatier!" />
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      {{/if}}
     </div>
 
     <ul>
@@ -24,5 +28,5 @@
 </body>
 
 <template name="recipe">
-  <li>{{method}}</li>
+  <li>{{method}} by {{username}}</li>
 </template>
