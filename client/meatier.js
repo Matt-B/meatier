@@ -1,5 +1,3 @@
-Recipes = new Mongo.Collection("recipes");
-
 Meteor.subscribe("recipes");
 
 Template.body.helpers({
@@ -11,9 +9,13 @@ Template.body.helpers({
 Template.body.events({
   "submit .new-recipe": function(event) {
     event.preventDefault();
-    var method = event.target.text.value;
-    Meteor.call("addRecipe", method);
-    event.target.text.value = "";
+    var title = event.target.title.value;
+    var ingredients = event.target.ingredient.value;
+    var method = event.target.method.value;
+    Meteor.call("addRecipe", title, ingredients, method);
+    event.target.title.value = "";
+    event.target.ingredient.value = "";
+    event.target.method.value = "";
   }
 });
 
