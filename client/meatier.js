@@ -13,6 +13,7 @@ Template.body.events({
     var ingredients = event.target.ingredient.value;
     var method = event.target.method.value;
     Meteor.call("addRecipe", title, ingredients, method);
+    $('#newRecipeModal').modal('hide')
     event.target.title.value = "";
     event.target.ingredient.value = "";
     event.target.method.value = "";
