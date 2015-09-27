@@ -1,0 +1,11 @@
+<template name="fullRecipe">
+  {{#with recipeData}}
+    <h2>{{title}} by {{username}}</h2>
+    <ul>
+      <li>{{ingredients}}</li>
+    </ul>
+    <p>
+      {{method}}
+    </p>
+  {{/with}}
+</template>

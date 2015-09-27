@@ -7,6 +7,9 @@ Template.body.helpers({
 });
 
 Template.body.events({
+  'click .showRecipe': function() {
+    Session.set('recipedata', this);
+  },
   "submit .new-recipe": function(event) {
     event.preventDefault();
     var title = event.target.title.value;

@@ -1,3 +1,7 @@
 <template name="recipe">
-  <li>{{title}} by {{username}}</li>
+  <li>
+    <a href="#" class="showRecipe" id="fullLink" data-toggle="modal" data-target=".full-recipe-modal">
+      {{title}} by {{username}}
+    </a>
+  </li>
 </template>
