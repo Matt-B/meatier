@@ -1,0 +1,19 @@
+<template name="fullRecipeModal">
+  {{#with recipeData}}
+    <div id="fullRecipeModal" class="modal fade full-recipe-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2>{{title}} by {{username}}</h2>
+            <ul>
+              <li>{{ingredients}}</li>
+            </ul>
+            <p>
+              {{method}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</template>

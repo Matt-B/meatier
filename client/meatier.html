@@ -4,55 +4,13 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">
-            Meatier
-          </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            {{#if currentUser}}
-              <li>
-                <a href="#" data-toggle="modal" data-target=".new-recipe-modal">
-                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  New recipe
-                </a>
-              </li>
-            {{/if}}
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {{> loginButtons}}
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div id="newRecipeModal" class="modal fade new-recipe-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Add a new recipe</h4>
-          </div>
-          <div class="modal-body">
-            {{> newRecipeForm}}
-          </div>
-        </div>
-      </div>
-    </div>
+    {{> navbar}}
+    {{> newRecipeModal}}
     <ul>
       {{#each recipes}}
         {{> recipe}}
       {{/each}}
     </ul>
-    <div id="fullRecipeModal" class="modal fade full-recipe-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-body">
-            {{> fullRecipe}}
-          </div>
-        </div>
-      </div>
-    </div>
+    {{> fullRecipeModal}}
   </div>
 </body>
