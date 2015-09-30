@@ -13,7 +13,7 @@ Template.body.events({
   "submit .new-recipe": function(event) {
     event.preventDefault();
     var title = event.target.title.value;
-    var ingredients = event.target.ingredient.value;
+    var ingredients = [event.target.ingredient.value];
     var method = event.target.method.value;
     Meteor.call("addRecipe", title, ingredients, method);
     $('#newRecipeModal').modal('hide')

@@ -5,8 +5,11 @@
         <div class="modal-content">
           <div class="modal-body">
             <h2>{{title}} by {{username}}</h2>
+            <h4>ingredients</h4>
             <ul>
-              <li>{{ingredients}}</li>
+              {{#each ingredients}}
+                <li>{{this}}</li>
+              {{/each}}
             </ul>
             <p>
               {{method}}
